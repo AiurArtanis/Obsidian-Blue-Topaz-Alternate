@@ -27816,11 +27816,10 @@ body.custom-unordered-list .markdown-source-view.mod-cm6 .HyperMD-list-line.Hype
   margin-left: var(--bt-list-indentation-margin-left-reading, 0);
 }
 
-/* #696: keep the ::before indentation guide, but suppress the duplicate guide
-   that some Obsidian versions render on a nested list container. */
-.markdown-rendered.show-indentation-guide li > :is(ul, ol) {
-  border-inline-start: none !important;
-  box-shadow: none !important;
+/* #696: numbered text inside a nested unordered list already has a marker;
+   suppress the overlapping native indentation guide on that inner list. */
+.markdown-rendered.show-indentation-guide li > ul::before {
+  border: none !important;
 }
 
 .is-focused .mod-active .workspace-tab-header.is-active
