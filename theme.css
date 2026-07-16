@@ -27816,6 +27816,13 @@ body.custom-unordered-list .markdown-source-view.mod-cm6 .HyperMD-list-line.Hype
   margin-left: var(--bt-list-indentation-margin-left-reading, 0);
 }
 
+/* #696: keep the ::before indentation guide, but suppress the duplicate guide
+   that some Obsidian versions render on a nested ordered-list container. */
+.markdown-rendered.show-indentation-guide li > ol {
+  border-inline-start: none !important;
+  box-shadow: none !important;
+}
+
 .is-focused .mod-active .workspace-tab-header.is-active
 .workspace-tab-header-inner-icon {
   color: var(--theme-color);
