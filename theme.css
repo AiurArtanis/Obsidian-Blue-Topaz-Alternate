@@ -27817,8 +27817,8 @@ body.custom-unordered-list .markdown-source-view.mod-cm6 .HyperMD-list-line.Hype
 }
 
 /* #696: keep the ::before indentation guide, but suppress the duplicate guide
-   that some Obsidian versions render on a nested ordered-list container. */
-.markdown-rendered.show-indentation-guide li > ol {
+   that some Obsidian versions render on a nested list container. */
+.markdown-rendered.show-indentation-guide li > :is(ul, ol) {
   border-inline-start: none !important;
   box-shadow: none !important;
 }
