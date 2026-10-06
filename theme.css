@@ -5676,7 +5676,7 @@ body.all-dark-pdf .print,
   --accent-s: 64%;
   --accent-l: 49%;
   --accent-l-alt: calc(var(--accent-l) * 1.05);
-  --interactive-accent-rgb: 45, 130, 204;
+  --interactive-accent-rgb: rgb(45, 130, 204);
   --interactive-accent-hover: var(--color-accent-2);
   --panel-border-color: #18191e;
   --search-text: #e0e0e0;
@@ -5793,7 +5793,7 @@ body.all-dark-pdf .print,
   --graph-circle-outline: transparent;
   --graph-canvas-bg: var(--background-primary);
   --graph-circle-fill-highlight: var(--interactive-accent);
-  --graph-line-fill-highlight: rgb(var(--interactive-accent-rgb));
+  --graph-line-fill-highlight: var(--interactive-accent-rgb);
 
   --unresolved-link: var(--graph-unresolved);
   --link-unresolved-decoration-color: var(--graph-unresolved);
@@ -6066,7 +6066,7 @@ body.all-dark-pdf .print,
   --accent-s: 77%;
   --accent-l: 54%;
   --accent-l-alt: calc(var(--accent-l) * 0.9);
-  --interactive-accent-rgb: 70, 142, 235;
+  --interactive-accent-rgb: rgb(70, 142, 235);
 
   --interactive-accent-hover: var(--color-accent-2);
   --panel-border-color: #dbdbdc;
@@ -6199,7 +6199,7 @@ body.all-dark-pdf .print,
   --graph-circle-outline: transparent;
   --graph-canvas-bg: var(--background-primary);
   --graph-circle-fill-highlight: var(--interactive-accent);
-  --graph-line-fill-highlight: rgb(var(--interactive-accent-rgb));
+  --graph-line-fill-highlight: var(--interactive-accent-rgb);
  
   --unresolved-link: var(--graph-unresolved);
   --link-unresolved-decoration-color: var(--graph-unresolved);
@@ -6420,7 +6420,7 @@ body.color-scheme-options-avocado-topaz.theme-light {
   --accent-h: 143;
   --accent-s: 34%;
   --accent-l: 45%;
-  --interactive-accent-rgb: 122, 189, 148;
+  --interactive-accent-rgb: rgb(122, 189, 148);
 
   --search-text: #000000;
   --folder-title: #000000;
@@ -6569,7 +6569,7 @@ body.color-scheme-options-avocado-topaz.theme-dark {
   --accent-h: 140;
   --accent-s: 52%;
   --accent-l: 41%;
-  --interactive-accent-rgb: 50, 159, 86;
+  --interactive-accent-rgb: rgb(50, 159, 86);
 
   --text-selection: #0080ff59;
   --text-highlight-bg: #47893b8a;
@@ -6675,7 +6675,7 @@ body.color-scheme-options-monochrome-topaz.theme-dark {
   --accent-h: 0;
   --accent-s: 0%;
   --accent-l: 47%;
-  --interactive-accent-rgb: 120, 120, 120;
+  --interactive-accent-rgb: rgb(120, 120, 120);
 
   --text-highlight-bg: #89853b8a;
   --mark-highlight-strong-em: #fff7603a;
@@ -6796,7 +6796,7 @@ body.color-scheme-options-monochrome-topaz.theme-light {
   --accent-h: 0;
   --accent-s: 0%;
   --accent-l: 31%;
-  --interactive-accent-rgb: 79, 79, 79;
+  --interactive-accent-rgb: rgb(79, 79, 79);
 
   --strong-em-highlight-color: #000000;
   --text-highlight-bg: #ecf56eb4;
@@ -6941,7 +6941,7 @@ body.color-scheme-options-pink-topaz.theme-light {
   --accent-s: 80%;
   --accent-l: 77%;
   --text-selection: #f7b2cf59;
-  --interactive-accent-rgb: 243, 148, 203;
+  --interactive-accent-rgb: rgb(243, 148, 203);
 
   --search-text: #000000;
   --folder-title: #000000;
@@ -7085,7 +7085,7 @@ body.color-scheme-options-pink-topaz.theme-dark {
   --accent-h: 338;
   --accent-s: 51%;
   --accent-l: 59%;
-  --interactive-accent-rgb: 204, 97, 136;
+  --interactive-accent-rgb: rgb(204, 97, 136);
 
   --text-highlight-bg: #de87a785;
   --mark-highlight-strong-em: #dc799e85;
@@ -7259,7 +7259,7 @@ body.color-scheme-options-topaz-nord.theme-dark {
   --mark-highlight-strong-em: var(--nord13-1);
   --text-selection: var(--nord9-2);
 
-  --interactive-accent-rgb: 129, 161, 193;
+  --interactive-accent-rgb: rgb(129, 161, 193);
 
   --folder-title: var(--nord4);
 
@@ -7428,7 +7428,7 @@ body.color-scheme-options-topaz-nord.theme-light {
 
   --text-selection: var(--nord9-2);
 
-  --interactive-accent-rgb: 129, 161, 193;
+  --interactive-accent-rgb: rgb(129, 161, 193);
 
   --tag-text: #3a79dd;
   --tag1: #005aec21;
@@ -7528,7 +7528,7 @@ body.color-scheme-options-flamingo.theme-light {
   --text-highlight-bg: hsla(var(--text-highlight-bg-h), var(--text-highlight-bg-s), var(--text-highlight-bg-l), var(--text-highlight-bg-a));
   --text-selection: #f39ba044;
 
-  --interactive-accent-rgb: 245,167,162;
+  --interactive-accent-rgb: rgb(245,167,162);
   --accent-h: 4;
   --accent-s: 81%;
   --accent-l: 80%;
@@ -7673,7 +7673,7 @@ body.color-scheme-options-flamingo.theme-dark {
   --accent-h: 357;
   --accent-s: 79%;
   --accent-l: 78%;
-  --interactive-accent-rgb: 243, 155, 160;
+  --interactive-accent-rgb: rgb(243, 155, 160);
 
   --panel-border-color: #f93759;
   --search-text: #fff;
@@ -7960,7 +7960,7 @@ body.color-scheme-options-honey-milk-topaz.theme-light {
   --accent-h: 41;
   --accent-s: 88%;
   --accent-l: 54%;
-  --interactive-accent-rgb: 215, 178, 88;
+  --interactive-accent-rgb: rgb(215, 178, 88);
 
   --search-text: #000000;
   --folder-title: #000000;
@@ -8107,7 +8107,7 @@ body.color-scheme-options-honey-milk-topaz.theme-dark {
   --accent-h: 43;
   --accent-s: 69%;
   --accent-l: 50%;
-  --interactive-accent-rgb: 216, 166, 39;/*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
+  --interactive-accent-rgb: rgb(216, 166, 39);/*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
 
   --panel-border-color: #18191e;/*侧边栏、下部状态栏线条颜色，改了没有，线条被我取消了 :p*/
   --search-text: var(--color1);/*搜索结果文字颜色*/
@@ -8273,7 +8273,7 @@ body.color-scheme-options-chocolate-topaz.theme-light {
   --accent-h: 17;
   --accent-s: 44%;
   --accent-l: 32%;
-  --interactive-accent-rgb: 116, 65, 45;
+  --interactive-accent-rgb: rgb(116, 65, 45);
 
   --strong-em-highlight-color: var(--color11);
 
@@ -8430,7 +8430,7 @@ body.color-scheme-options-chocolate-topaz.theme-dark {
   --accent-s: 44%;
   --accent-l: 32%;
   --interactive-accent: var(--main-color); /*主题强调色*/
-  --interactive-accent-rgb: 116, 65, 45;/*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
+  --interactive-accent-rgb: rgb(116, 65, 45);/*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
 
   --panel-border-color: #18191e;/*侧边栏、下部状态栏线条颜色，改了没有，线条被我取消了 :p*/
   --search-text: #e0e0e0;/*搜索结果文字颜色*/
@@ -8614,7 +8614,7 @@ body.color-scheme-options-autumn-topaz.theme-light {
   --accent-h: 80;
   --accent-s: 100%;
   --accent-l: 33%;
-  --interactive-accent-rgb: 112, 166, 0;
+  --interactive-accent-rgb: rgb(112, 166, 0);
 
   --strong-em-highlight-color: var(--color11);
   --text-search-highlight-bg: #ffd1dd;
@@ -8769,7 +8769,7 @@ body.color-scheme-options-autumn-topaz.theme-dark {
   --text-selection: #47a5914d;  /*鼠标选择 文字背景颜色*/
 
   --interactive-accent: var(--main-color); /*主题强调色*/
-  --interactive-accent-rgb: 104, 56, 39; /*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
+  --interactive-accent-rgb: rgb(104, 56, 39); /*主题强调色 rgb , 需与主题色一致（把上面的值转成rgb放下面）*/
 
   --strong-em-highlight-color: var(--color11);
 
@@ -8928,7 +8928,7 @@ body.color-scheme-options-lillimon-topaz.theme-light {
   --background-secondary-alt: var(--background-secondary-alt-bg-4-bt,#e7e7e4);
 
   --text-normal:var(--magic-main-color);
-  --interactive-accent-rgb: 215, 178, 88;
+  --interactive-accent-rgb: rgb(215, 178, 88);
 
   --strong-em-highlight-color: var(--color11);
 
@@ -9055,7 +9055,7 @@ body.color-scheme-options-lillimon-topaz.theme-dark {
   --background-secondary: var(--background-secondary-bg-4-bt,#222222);
   --background-secondary-alt: var(--background-secondary-alt-bg-4-bt,#333333);
 
-  --interactive-accent-rgb: 58, 91, 82;
+  --interactive-accent-rgb: rgb(58, 91, 82);
 
   --strong-em-highlight-color: var(--color11);
 
@@ -9195,7 +9195,7 @@ body.color-scheme-options-lilac.theme-light {
   --interactive-normal: #eaeaeb;
   --interactive-hover: #d1b6f0;
 
-  --interactive-accent-rgb: 195, 144, 230;/*工作区旁边的线*/
+  --interactive-accent-rgb: rgb(195, 144, 230);/*工作区旁边的线*/
   --accent-h: 266;
   --accent-s: 62%;
   --accent-l: 72%;
@@ -9374,7 +9374,7 @@ body.color-scheme-options-lilac.theme-dark {
   --interactive-normal: #20242b;
   --interactive-hover: #353b47;
 
-  --interactive-accent-rgb: 128, 50, 159;
+  --interactive-accent-rgb: rgb(128, 50, 159);
 
   --strong-em-highlight-color: #9c8ce6;
 
@@ -9624,7 +9624,7 @@ body.color-scheme-options-simplicity-topaz.theme-light {
   --accent-h: 220;
   --accent-s: 20%;
   --accent-l: 35%;
-  --interactive-accent-rgb: 70, 142, 235;
+  --interactive-accent-rgb: rgb(70, 142, 235);
 
   --panel-border-color: var(--simple-white-4);
 
@@ -10579,22 +10579,22 @@ body.colorful-p-kanban .kanban .task-list-item-checkbox {
 /* cssclass: colorful-highlight */
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-em"])~.cm-em.cm-highlight.cm-strong,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-em.cm-highlight.cm-strong {
-  background-color: var(--bg-color-highlight-3) !important;
-  color: var(--color-highlight-3) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
   -webkit-text-fill-color: unset;
   font-style: normal;
   font-weight: var(--font-weight-highlight-3);
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-strong"])~.cm-highlight.cm-strong,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-highlight.cm-strong {
-  background-color: var(--bg-color-highlight-2) !important;
-  color: var(--color-highlight-2) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
   font-weight: var(--font-weight-highlight-2);
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-em"])~.cm-em.cm-highlight,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-em.cm-highlight {
-  background-color: var(--bg-color-highlight-1) !important;
-  color: var(--color-highlight-1) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-1)) !important;
   font-style: normal;
   font-weight: var(--font-weight-highlight-1);
 }
@@ -10602,7 +10602,7 @@ body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-strong"]~span.cm-highlight[class*="cm-strong"],
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-em"]:not([class*="cm-formatting-highlight"]),
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-strong"]:not([class*="cm-formatting-highlight"]) {
-  background-color: var(--text-highlight-bg) !important;
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg)) !important;
 }
 
 /* cssclass: cloze */
@@ -11459,16 +11459,27 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-quote {
 }
 
 /* highlight */
+/* Obsidian 1.14: explicit highlight colors take precedence over legacy
+   default and bold/italic highlight presets. Core CSS supplies each color. */
+.markdown-rendered mark:is([data-highlight="red"], [data-highlight="orange"],
+  [data-highlight="yellow"], [data-highlight="green"], [data-highlight="blue"],
+  [data-highlight="purple"]),
+.cm-s-obsidian :is(.cm-highlight-red, .cm-highlight-orange, .cm-highlight-yellow,
+  .cm-highlight-green, .cm-highlight-blue, .cm-highlight-purple) {
+  --bt-native-highlight-background: var(--highlight-background);
+  --bt-native-highlight-color: var(--text-normal);
+}
+
 :is(.markdown-preview-view,.markdown-rendered) mark {
-  background-color: var(--text-highlight-bg);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
   padding: 1px 2px;
-  color: var(--text-highlight);
+  color: var(--bt-native-highlight-color, var(--text-highlight));
   border-radius: var(--radius-xs);
 }
 
 .cm-s-obsidian span.cm-highlight,
 .cm-highlight.cm-quote {
-  color: var(--text-highlight);
+  color: var(--bt-native-highlight-color, var(--text-highlight));
   padding: 2px 0 1px 0;
 }
 
@@ -11505,8 +11516,8 @@ span.cm-highlight.cm-inline-code {
   background-clip: initial;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
-  background-color: var(--text-highlight-bg);
-  color: var(--text-highlight);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
+  color: var(--bt-native-highlight-color, var(--text-highlight));
 }
 
 .CodeMirror-lines span.cm-strong.cm-em.cm-highlight {
@@ -11534,7 +11545,7 @@ body:not(.remove-cloze-style) .cm-s-obsidian .cm-formatting.cm-formatting-highli
 
 body:not(.remove-cloze-style) .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-formatting-strikethrough~span.cm-highlight.cm-strikethrough:not(.cm-em):hover,
 .markdown-source-view.cloze .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-formatting-strikethrough~span.cm-highlight.cm-strikethrough:not(.cm-em):hover {
-  background-color: var(--text-highlight-bg);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
   color: var(--text-normal);
   transition: all 400ms ease-in-out;
 }
@@ -11588,8 +11599,8 @@ body:not(.remove-cloze-style) .cm-s-obsidian .cm-em.cm-formatting.cm-formatting-
 }
 body:not(.remove-cloze-style) .markdown-source-view:not([class*="cm5"]) .cm-em.cm-formatting.cm-formatting-em.cm-em.cm-formatting.cm-formatting-em~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight~.cm-em.cm-formatting.cm-formatting-strikethrough.cm-highlight.cm-strikethrough~span.cm-em.cm-highlight.cm-strikethrough~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight,
 .markdown-source-view:not([class*="cm5"]).cloze .cm-em.cm-formatting.cm-formatting-em.cm-em.cm-formatting.cm-formatting-em~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight~.cm-em.cm-formatting.cm-formatting-strikethrough.cm-highlight.cm-strikethrough~span.cm-em.cm-highlight.cm-strikethrough~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight {
-  background-color: var(--bg-color-highlight-1) !important;
-  color: var(--color-highlight-1);
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-1));
   font-style: normal;
 }
 
@@ -11643,8 +11654,8 @@ span.cm-strong.cm-em.cm-highlight {
   background-image: initial;
   background-clip: initial;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: var(--strong-em-highlight-color);
-  background-color: var(--text-highlight-bg);
+  -webkit-text-fill-color: var(--bt-native-highlight-color, var(--strong-em-highlight-color));
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
 }
 
 
@@ -13889,7 +13900,7 @@ span.cm-em.cm-highlight.cm-quote,
 }
 
 :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: var(--mark-highlight-strong-em);
+  background-color: var(--bt-native-highlight-background, var(--mark-highlight-strong-em));
   padding: 1px 3px;
   border-radius: var(--radius-xs);
 }
@@ -14441,7 +14452,7 @@ div[class*="-backlinks"].markdown-preview-view .markdown-preview-sizer.markdown-
 .theme-light .cm-formatting.cm-formatting-highlight.cm-strong.cm-em.cm-highlight,
 .theme-light .popover mark,
 .theme-light span.cm-strong.cm-em.cm-highlight {
-  background-color: hsla(var(--text-highlight-bg-h-light), var(--text-highlight-bg-s-light), var(--text-highlight-bg-l-light), var(--text-highlight-bg-a-light));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-light), var(--text-highlight-bg-s-light), var(--text-highlight-bg-l-light), var(--text-highlight-bg-a-light)));
 }
 .theme-dark .cm-s-obsidian span.cm-formatting-highlight,
 .theme-dark .cm-s-obsidian span.cm-highlight:not([class*="code"]),
@@ -14449,15 +14460,15 @@ div[class*="-backlinks"].markdown-preview-view .markdown-preview-sizer.markdown-
 .theme-dark .cm-formatting.cm-formatting-highlight.cm-strong.cm-em.cm-highlight,
 .theme-dark .popover mark,
 .theme-dark span.cm-strong.cm-em.cm-highlight {
-  background-color: hsla(var(--text-highlight-bg-h-dark), var(--text-highlight-bg-s-dark), var(--text-highlight-bg-l-dark), var(--text-highlight-bg-a-dark));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-dark), var(--text-highlight-bg-s-dark), var(--text-highlight-bg-l-dark), var(--text-highlight-bg-a-dark)));
 }
 
 .theme-light :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: hsla(var(--text-highlight-bg-h-light), calc(var(--text-highlight-bg-s-light) * 1.5), calc(var(--text-highlight-bg-l-light) * 0.6), calc(var(--text-highlight-bg-a-light) * 0.28));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-light), calc(var(--text-highlight-bg-s-light) * 1.5), calc(var(--text-highlight-bg-l-light) * 0.6), calc(var(--text-highlight-bg-a-light) * 0.28)));
 }
 
 .theme-dark :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: hsla(var(--text-highlight-bg-h-dark), calc(var(--text-highlight-bg-s-dark) * 1.5), calc(var(--text-highlight-bg-l-dark) * 1.1), calc(var(--text-highlight-bg-a-dark) * 0.55));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-dark), calc(var(--text-highlight-bg-s-dark) * 1.5), calc(var(--text-highlight-bg-l-dark) * 1.1), calc(var(--text-highlight-bg-a-dark) * 0.55)));
 }
 
 body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight,
@@ -14466,8 +14477,8 @@ body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highl
 .markdown-source-view.colorful-highlight .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight + .cm-em.cm-highlight:not([class*="strong"]),
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font):not(strong)>em>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(strong)>em>mark {
-  background-color: var(--bg-color-highlight-1);
-  color: var(--color-highlight-1);
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1));
+  color: var(--bt-native-highlight-color, var(--color-highlight-1));
   font-style: normal;
   font-weight: var(--font-weight-highlight-1);
 }
@@ -14481,8 +14492,8 @@ body:not(.remove-colorful-highlight-bg) .cm-formatting.cm-formatting-highlight.c
 .markdown-source-view.colorful-highlight .cm-formatting.cm-formatting-highlight.cm-highlight.cm-strong + .cm-highlight.cm-strong:not([class*="em"]),
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font):not(em)>strong>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(em)>strong>mark {
-  background-color: var(--bg-color-highlight-2) !important;
-  color: var(--color-highlight-2) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
   font-weight: var(--font-weight-highlight-2);
 }
 
@@ -14492,8 +14503,8 @@ body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highl
 .markdown-source-view.colorful-highlight .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight.cm-strong + .cm-em.cm-highlight.cm-strong,
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font)>strong>em>mark {
-  background-color: var(--bg-color-highlight-3) !important;
-  color: var(--color-highlight-3) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
   font-style: normal;
   font-weight: var(--font-weight-highlight-3);
   background-image: initial;
@@ -17960,8 +17971,8 @@ body.style-options-for-kanban-plugin-dynamic-neon-three .kanban-plugin__lane-wra
 /* ======== tooltip ========= */
 .tooltip,
 .tooltip.mod-right {
-  color: var(--white);
-  background-color: var(--interactive-accent);
+  --tooltip-color: var(--text-on-accent);
+  --tooltip-background: var(--interactive-accent);
 }
 .tooltip .tooltip-arrow {
   border-bottom: 5px solid var(--interactive-accent);
@@ -18671,20 +18682,20 @@ body.style-options-for-admonition-plugin .admonition-hibox .admonition-title {
 
 /* ======Notice================ */
 .notice-container .notice:nth-child(4n+1){
-  background-color: var(--background-pink);
-  color: var(--text-normal);
+  --notice-background: var(--background-pink);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+2){
-  background-color: var(--background-yellow);
-  color: var(--text-normal);
+  --notice-background: var(--background-yellow);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+3){
-  background-color: var(--background-green);
-  color: var(--text-normal);
+  --notice-background: var(--background-green);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+4){
-  background-color: var(--background-red);
-  color: var(--text-normal);
+  --notice-background: var(--background-red);
+  --notice-color: var(--text-normal);
 }
 
 .notice-container {
@@ -19668,7 +19679,7 @@ div.code-block-wrap > pre  pre:not([closed]) + code[class*=language-] {
   font-family: var(--font-text);
 }
 .markdown-rendered pre.obsidian-embedded-code-title__code-block-title[closed] {
-  background-color: rgba(var(--interactive-accent-rgb), 0.1) !important;
+  background-color: color-mix(in srgb, var(--interactive-accent-rgb) 10%, transparent) !important;
 }
 .markdown-rendered pre.obsidian-embedded-code-title__code-block-title {
   overflow-y: hidden;
@@ -26010,7 +26021,7 @@ body.theme-dark .popover.hover-popover:not(.is-loaded) {
     background-color: var(--background-primary) !important;
   }
   body.all-dark-pdf .print :is(.markdown-preview-view,.markdown-rendered) mark {
-    color: var(--text-highlight) !important;
+    color: var(--bt-native-highlight-color, var(--text-highlight)) !important;
   }
   body.all-dark-pdf .print .markdown-preview-view {
     color: var(--text-normal) !important;
@@ -29094,7 +29105,7 @@ body.canvas-card-focus-mode .canvas:has(.is-focused.mod-canvas-color-custom) .ca
 }
 
 .canvas-node-placeholder::after {
-  background-color: rgba(var(--canvas-color), 0.3);
+  background-color: color-mix(in srgb, var(--canvas-color) 30%, transparent);
 }
 .canvas-icon-placeholder svg {
   opacity: 0.5;
@@ -29920,6 +29931,25 @@ body:not(.theme-light.background-settings-workplace-background-image) .workspace
 
 
 /*=== Bases 表格视图 ===*/
+/* Obsidian 1.14 native Kanban uses the same surfaces as other Bases views. */
+.bases-view[data-view-type="kanban"] {
+  --bases-kanban-column-background: var(--background-primary-alt);
+  --bases-kanban-column-header-background: var(--bases-table-header-background);
+  --bases-kanban-card-background: var(--background-primary);
+  --bases-kanban-card-shadow: 0 1px 6px var(--bases-card-shadow);
+  --bases-kanban-card-shadow-hover: var(--window-shadow);
+  --bases-kanban-card-shadow-focus: 0 0 0 2px var(--interactive-accent);
+  --bases-kanban-cover-background: var(--background-secondary);
+}
+
+.bases-kanban-column-header .bases-group-heading {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  background: transparent;
+  font-size: inherit;
+  color: var(--bases-table-header-color);
+}
 
 .bases-table-container {
   border-radius: var(--bases-table-container-border-radius);
