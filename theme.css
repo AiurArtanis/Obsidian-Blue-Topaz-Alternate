@@ -10579,22 +10579,22 @@ body.colorful-p-kanban .kanban .task-list-item-checkbox {
 /* cssclass: colorful-highlight */
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-em"])~.cm-em.cm-highlight.cm-strong,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-em.cm-highlight.cm-strong {
-  background-color: var(--bg-color-highlight-3) !important;
-  color: var(--color-highlight-3) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
   -webkit-text-fill-color: unset;
   font-style: normal;
   font-weight: var(--font-weight-highlight-3);
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-strong"])~.cm-highlight.cm-strong,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-highlight.cm-strong {
-  background-color: var(--bg-color-highlight-2) !important;
-  color: var(--color-highlight-2) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
   font-weight: var(--font-weight-highlight-2);
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-em"])~.cm-em.cm-highlight,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-em.cm-highlight {
-  background-color: var(--bg-color-highlight-1) !important;
-  color: var(--color-highlight-1) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-1)) !important;
   font-style: normal;
   font-weight: var(--font-weight-highlight-1);
 }
@@ -10602,7 +10602,7 @@ body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-strong"]~span.cm-highlight[class*="cm-strong"],
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-em"]:not([class*="cm-formatting-highlight"]),
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-strong"]:not([class*="cm-formatting-highlight"]) {
-  background-color: var(--text-highlight-bg) !important;
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg)) !important;
 }
 
 /* cssclass: cloze */
@@ -11459,16 +11459,27 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-quote {
 }
 
 /* highlight */
+/* Obsidian 1.14: explicit highlight colors take precedence over legacy
+   default and bold/italic highlight presets. Core CSS supplies each color. */
+.markdown-rendered mark:is([data-highlight="red"], [data-highlight="orange"],
+  [data-highlight="yellow"], [data-highlight="green"], [data-highlight="blue"],
+  [data-highlight="purple"]),
+.cm-s-obsidian :is(.cm-highlight-red, .cm-highlight-orange, .cm-highlight-yellow,
+  .cm-highlight-green, .cm-highlight-blue, .cm-highlight-purple) {
+  --bt-native-highlight-background: var(--highlight-background);
+  --bt-native-highlight-color: var(--text-normal);
+}
+
 :is(.markdown-preview-view,.markdown-rendered) mark {
-  background-color: var(--text-highlight-bg);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
   padding: 1px 2px;
-  color: var(--text-highlight);
+  color: var(--bt-native-highlight-color, var(--text-highlight));
   border-radius: var(--radius-xs);
 }
 
 .cm-s-obsidian span.cm-highlight,
 .cm-highlight.cm-quote {
-  color: var(--text-highlight);
+  color: var(--bt-native-highlight-color, var(--text-highlight));
   padding: 2px 0 1px 0;
 }
 
@@ -11505,8 +11516,8 @@ span.cm-highlight.cm-inline-code {
   background-clip: initial;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
-  background-color: var(--text-highlight-bg);
-  color: var(--text-highlight);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
+  color: var(--bt-native-highlight-color, var(--text-highlight));
 }
 
 .CodeMirror-lines span.cm-strong.cm-em.cm-highlight {
@@ -11534,7 +11545,7 @@ body:not(.remove-cloze-style) .cm-s-obsidian .cm-formatting.cm-formatting-highli
 
 body:not(.remove-cloze-style) .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-formatting-strikethrough~span.cm-highlight.cm-strikethrough:not(.cm-em):hover,
 .markdown-source-view.cloze .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-formatting-strikethrough~span.cm-highlight.cm-strikethrough:not(.cm-em):hover {
-  background-color: var(--text-highlight-bg);
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
   color: var(--text-normal);
   transition: all 400ms ease-in-out;
 }
@@ -11588,8 +11599,8 @@ body:not(.remove-cloze-style) .cm-s-obsidian .cm-em.cm-formatting.cm-formatting-
 }
 body:not(.remove-cloze-style) .markdown-source-view:not([class*="cm5"]) .cm-em.cm-formatting.cm-formatting-em.cm-em.cm-formatting.cm-formatting-em~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight~.cm-em.cm-formatting.cm-formatting-strikethrough.cm-highlight.cm-strikethrough~span.cm-em.cm-highlight.cm-strikethrough~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight,
 .markdown-source-view:not([class*="cm5"]).cloze .cm-em.cm-formatting.cm-formatting-em.cm-em.cm-formatting.cm-formatting-em~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight~.cm-em.cm-formatting.cm-formatting-strikethrough.cm-highlight.cm-strikethrough~span.cm-em.cm-highlight.cm-strikethrough~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight {
-  background-color: var(--bg-color-highlight-1) !important;
-  color: var(--color-highlight-1);
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-1));
   font-style: normal;
 }
 
@@ -11643,8 +11654,8 @@ span.cm-strong.cm-em.cm-highlight {
   background-image: initial;
   background-clip: initial;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: var(--strong-em-highlight-color);
-  background-color: var(--text-highlight-bg);
+  -webkit-text-fill-color: var(--bt-native-highlight-color, var(--strong-em-highlight-color));
+  background-color: var(--bt-native-highlight-background, var(--text-highlight-bg));
 }
 
 
@@ -13889,7 +13900,7 @@ span.cm-em.cm-highlight.cm-quote,
 }
 
 :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: var(--mark-highlight-strong-em);
+  background-color: var(--bt-native-highlight-background, var(--mark-highlight-strong-em));
   padding: 1px 3px;
   border-radius: var(--radius-xs);
 }
@@ -14441,7 +14452,7 @@ div[class*="-backlinks"].markdown-preview-view .markdown-preview-sizer.markdown-
 .theme-light .cm-formatting.cm-formatting-highlight.cm-strong.cm-em.cm-highlight,
 .theme-light .popover mark,
 .theme-light span.cm-strong.cm-em.cm-highlight {
-  background-color: hsla(var(--text-highlight-bg-h-light), var(--text-highlight-bg-s-light), var(--text-highlight-bg-l-light), var(--text-highlight-bg-a-light));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-light), var(--text-highlight-bg-s-light), var(--text-highlight-bg-l-light), var(--text-highlight-bg-a-light)));
 }
 .theme-dark .cm-s-obsidian span.cm-formatting-highlight,
 .theme-dark .cm-s-obsidian span.cm-highlight:not([class*="code"]),
@@ -14449,15 +14460,15 @@ div[class*="-backlinks"].markdown-preview-view .markdown-preview-sizer.markdown-
 .theme-dark .cm-formatting.cm-formatting-highlight.cm-strong.cm-em.cm-highlight,
 .theme-dark .popover mark,
 .theme-dark span.cm-strong.cm-em.cm-highlight {
-  background-color: hsla(var(--text-highlight-bg-h-dark), var(--text-highlight-bg-s-dark), var(--text-highlight-bg-l-dark), var(--text-highlight-bg-a-dark));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-dark), var(--text-highlight-bg-s-dark), var(--text-highlight-bg-l-dark), var(--text-highlight-bg-a-dark)));
 }
 
 .theme-light :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: hsla(var(--text-highlight-bg-h-light), calc(var(--text-highlight-bg-s-light) * 1.5), calc(var(--text-highlight-bg-l-light) * 0.6), calc(var(--text-highlight-bg-a-light) * 0.28));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-light), calc(var(--text-highlight-bg-s-light) * 1.5), calc(var(--text-highlight-bg-l-light) * 0.6), calc(var(--text-highlight-bg-a-light) * 0.28)));
 }
 
 .theme-dark :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark {
-  background-color: hsla(var(--text-highlight-bg-h-dark), calc(var(--text-highlight-bg-s-dark) * 1.5), calc(var(--text-highlight-bg-l-dark) * 1.1), calc(var(--text-highlight-bg-a-dark) * 0.55));
+  background-color: var(--bt-native-highlight-background, hsla(var(--text-highlight-bg-h-dark), calc(var(--text-highlight-bg-s-dark) * 1.5), calc(var(--text-highlight-bg-l-dark) * 1.1), calc(var(--text-highlight-bg-a-dark) * 0.55)));
 }
 
 body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight,
@@ -14466,8 +14477,8 @@ body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highl
 .markdown-source-view.colorful-highlight .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight + .cm-em.cm-highlight:not([class*="strong"]),
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font):not(strong)>em>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(strong)>em>mark {
-  background-color: var(--bg-color-highlight-1);
-  color: var(--color-highlight-1);
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1));
+  color: var(--bt-native-highlight-color, var(--color-highlight-1));
   font-style: normal;
   font-weight: var(--font-weight-highlight-1);
 }
@@ -14481,8 +14492,8 @@ body:not(.remove-colorful-highlight-bg) .cm-formatting.cm-formatting-highlight.c
 .markdown-source-view.colorful-highlight .cm-formatting.cm-formatting-highlight.cm-highlight.cm-strong + .cm-highlight.cm-strong:not([class*="em"]),
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font):not(em)>strong>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(em)>strong>mark {
-  background-color: var(--bg-color-highlight-2) !important;
-  color: var(--color-highlight-2) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
   font-weight: var(--font-weight-highlight-2);
 }
 
@@ -14492,8 +14503,8 @@ body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highl
 .markdown-source-view.colorful-highlight .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight.cm-strong + .cm-em.cm-highlight.cm-strong,
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font)>strong>em>mark,
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font)>strong>em>mark {
-  background-color: var(--bg-color-highlight-3) !important;
-  color: var(--color-highlight-3) !important;
+  background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
+  color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
   font-style: normal;
   font-weight: var(--font-weight-highlight-3);
   background-image: initial;
@@ -17960,8 +17971,8 @@ body.style-options-for-kanban-plugin-dynamic-neon-three .kanban-plugin__lane-wra
 /* ======== tooltip ========= */
 .tooltip,
 .tooltip.mod-right {
-  color: var(--white);
-  background-color: var(--interactive-accent);
+  --tooltip-color: var(--text-on-accent);
+  --tooltip-background: var(--interactive-accent);
 }
 .tooltip .tooltip-arrow {
   border-bottom: 5px solid var(--interactive-accent);
@@ -18671,20 +18682,20 @@ body.style-options-for-admonition-plugin .admonition-hibox .admonition-title {
 
 /* ======Notice================ */
 .notice-container .notice:nth-child(4n+1){
-  background-color: var(--background-pink);
-  color: var(--text-normal);
+  --notice-background: var(--background-pink);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+2){
-  background-color: var(--background-yellow);
-  color: var(--text-normal);
+  --notice-background: var(--background-yellow);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+3){
-  background-color: var(--background-green);
-  color: var(--text-normal);
+  --notice-background: var(--background-green);
+  --notice-color: var(--text-normal);
 }
 .notice-container .notice:nth-child(4n+4){
-  background-color: var(--background-red);
-  color: var(--text-normal);
+  --notice-background: var(--background-red);
+  --notice-color: var(--text-normal);
 }
 
 .notice-container {
@@ -26010,7 +26021,7 @@ body.theme-dark .popover.hover-popover:not(.is-loaded) {
     background-color: var(--background-primary) !important;
   }
   body.all-dark-pdf .print :is(.markdown-preview-view,.markdown-rendered) mark {
-    color: var(--text-highlight) !important;
+    color: var(--bt-native-highlight-color, var(--text-highlight)) !important;
   }
   body.all-dark-pdf .print .markdown-preview-view {
     color: var(--text-normal) !important;
@@ -29920,6 +29931,25 @@ body:not(.theme-light.background-settings-workplace-background-image) .workspace
 
 
 /*=== Bases 表格视图 ===*/
+/* Obsidian 1.14 native Kanban uses the same surfaces as other Bases views. */
+.bases-view[data-view-type="kanban"] {
+  --bases-kanban-column-background: var(--background-primary-alt);
+  --bases-kanban-column-header-background: var(--bases-table-header-background);
+  --bases-kanban-card-background: var(--background-primary);
+  --bases-kanban-card-shadow: 0 1px 6px var(--bases-card-shadow);
+  --bases-kanban-card-shadow-hover: var(--window-shadow);
+  --bases-kanban-card-shadow-focus: 0 0 0 2px var(--interactive-accent);
+  --bases-kanban-cover-background: var(--background-secondary);
+}
+
+.bases-kanban-column-header .bases-group-heading {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  background: transparent;
+  font-size: inherit;
+  color: var(--bases-table-header-color);
+}
 
 .bases-table-container {
   border-radius: var(--bases-table-container-border-radius);
