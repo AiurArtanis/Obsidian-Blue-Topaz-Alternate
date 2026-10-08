@@ -10582,21 +10582,21 @@ body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
   -webkit-text-fill-color: unset;
-  font-style: normal;
-  font-weight: var(--font-weight-highlight-3);
+  font-style: var(--bt-native-highlight-font-style, normal);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-3));
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-strong"])~.cm-highlight.cm-strong,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-highlight.cm-strong {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
-  font-weight: var(--font-weight-highlight-2);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-2));
 }
 body:not(.remove-colorful-highlight-bg) .markdown-source-view.is-live-preview *:not([class*="cm-formatting-highlight"])~*:not([class*="cm-em"])~.cm-em.cm-highlight,
 .markdown-source-view.is-live-preview.colorful-highlight .cm-em.cm-highlight {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-1)) !important;
-  font-style: normal;
-  font-weight: var(--font-weight-highlight-1);
+  font-style: var(--bt-native-highlight-font-style, normal);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-1));
 }
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-em"]~span.cm-highlight[class*="cm-em"],
 .cm-s-obsidian .cm-formatting.cm-formatting-highlight.cm-highlight~.cm-formatting.cm-highlight[class*="cm-strong"]~span.cm-highlight[class*="cm-strong"],
@@ -11468,6 +11468,18 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-quote {
   .cm-highlight-green, .cm-highlight-blue, .cm-highlight-purple) {
   --bt-native-highlight-background: var(--highlight-background);
   --bt-native-highlight-color: var(--text-normal);
+  --bt-native-highlight-font-weight: var(--bt-native-highlight-code-weight, var(--bt-native-highlight-bold-weight, inherit));
+  --bt-native-highlight-font-style: var(--bt-native-highlight-italic-style, inherit);
+  --bt-native-highlight-code-background: transparent;
+}
+
+/* CodeMirror splits one native highlight at formatting widgets. Keep those
+   fragments contiguous; round-corner presets still apply to whole marks. */
+.cm-s-obsidian :is(.cm-highlight-red, .cm-highlight-orange, .cm-highlight-yellow,
+  .cm-highlight-green, .cm-highlight-blue, .cm-highlight-purple) {
+  --bt-native-highlight-padding-inline: 0px;
+  --bt-native-highlight-margin-inline: 0px;
+  --bt-native-highlight-radius: 0px;
 }
 
 :is(.markdown-preview-view,.markdown-rendered) mark {
@@ -11484,12 +11496,12 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-quote {
 }
 
 body:not(.no-rounded-corners-highlight):not(.all-rounded-corners-highlight) .cm-s-obsidian .cm-widgetBuffer[aria-hidden="true"]+span.cm-highlight:has(+ .cm-widgetBuffer[aria-hidden="true"]) {
-  border-radius: 3px;
-  padding: 1px 2px;
+  border-radius: var(--bt-native-highlight-radius, 3px);
+  padding: 1px var(--bt-native-highlight-padding-inline, 2px);
 }
 
 .cm-s-obsidian span.cm-formatting-highlight {
-  border-radius: 3px 0 0 3px;
+  border-radius: var(--bt-native-highlight-radius, 3px) 0 0 var(--bt-native-highlight-radius, 3px);
 }
 
 .cm-s-obsidian span[class="cm-highlight"]+span.cm-formatting-highlight,
@@ -11502,7 +11514,7 @@ body:not(.no-rounded-corners-highlight):not(.all-rounded-corners-highlight) .cm-
 .cm-s-obsidian span[class*="cm-highlight"][class*="cm-strong"]+span.cm-formatting-highlight,
 .cm-s-obsidian span[class*="cm-highlight"][class*="cm-em"]+span.cm-formatting-highlight,
 .cm-s-obsidian span[class*="cm-highlight"][class*="strikethrough"]+span.cm-formatting-highlight {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 var(--bt-native-highlight-radius, 3px) var(--bt-native-highlight-radius, 3px) 0;
 }
 
 span.cm-formatting.cm-formatting-code.cm-highlight.cm-inline-code,
@@ -11601,7 +11613,7 @@ body:not(.remove-cloze-style) .markdown-source-view:not([class*="cm5"]) .cm-em.c
 .markdown-source-view:not([class*="cm5"]).cloze .cm-em.cm-formatting.cm-formatting-em.cm-em.cm-formatting.cm-formatting-em~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight~.cm-em.cm-formatting.cm-formatting-strikethrough.cm-highlight.cm-strikethrough~span.cm-em.cm-highlight.cm-strikethrough~.cm-em.cm-formatting.cm-formatting-highlight.cm-highlight {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-1));
-  font-style: normal;
+  font-style: var(--bt-native-highlight-font-style, normal);
 }
 
 body:not(.remove-cloze-style) :is(.markdown-preview-view,
@@ -12854,7 +12866,7 @@ div.math.math-block mjx-math{
 .cm-s-obsidian pre.HyperMD-codeblock,
 :is(.markdown-preview-view,.markdown-rendered) code,
 .markdown-rendered code {
-  color: var(--text-color-code);
+  color: var(--bt-native-highlight-color, var(--text-color-code));
   font-size: var(--font-size-code) !important;
   font-family: var(--font-monospace);
   text-align: start;
@@ -12883,7 +12895,7 @@ div.math.math-block mjx-math{
 
 :is(.markdown-preview-view,.markdown-rendered) code {
   vertical-align: auto;
-  background-color: var(--background-code-2) ;
+  background-color: var(--bt-native-highlight-code-background, var(--background-code-2));
 }
 
 :is(.markdown-preview-view,.markdown-rendered) pre code {
@@ -12893,12 +12905,12 @@ div.math.math-block mjx-math{
 
 .cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
 .cm-formatting.cm-formatting-code.cm-inline-code {
-  color: var(--text-color-code);
-  background-color: var(--background-code-2);
+  color: var(--bt-native-highlight-color, var(--text-color-code));
+  background-color: var(--bt-native-highlight-background, var(--background-code-2));
 }
 
 .cm-s-obsidian .cm-inline-code.cm-strong {
-  color: var(--text-color-code) !important;
+  color: var(--bt-native-highlight-color, var(--text-color-code)) !important;
 }
 
 /*******codebox settings*******/
@@ -13457,8 +13469,9 @@ code[class*="language-"] ::selection {
 }
 
 .cm-s-obsidian span.cm-inline-code {
+  --bt-native-highlight-code-weight: var(--font-weight-inline-code);
   padding: 2px 0 1px;
-  color: var(--text-color-code);
+  color: var(--bt-native-highlight-color, var(--text-color-code));
   font-weight: var(--font-weight-inline-code);
   font-family: var(--font-family-inline-code) !important;
   font-size: var(--font-size-code) !important;
@@ -13862,13 +13875,14 @@ body.bt-connected-indent-hover.bt-colorful-connected-indent-hover .markdown-prev
 span.cm-strong,
 :not(font)>strong,
 .cm-s-obsidian .cm-highlight.cm-strong {
+  --bt-native-highlight-bold-weight: var(--font-weight-strong);
   font-weight: var(--font-weight-strong);
 }
 
 span.cm-strong,
 :not(font)>strong,
 .cm-s-obsidian .cm-highlight.cm-strong {
-  color: var(--accent-strong) !important;
+  color: var(--bt-native-highlight-color, var(--accent-strong)) !important;
   font-family: var(--font-family-strong) !important;
 }
 
@@ -13882,7 +13896,8 @@ span.cm-em.cm-quote,
 span.cm-em.cm-highlight.cm-quote,
 :is(.markdown-preview-view,.markdown-rendered) :not(font):not(strong)>em,
 :is(.markdown-preview-view,.markdown-rendered) em>mark {
-  color: var(--accent-em);
+  --bt-native-highlight-italic-style: var(--font-style-em);
+  color: var(--bt-native-highlight-color, var(--accent-em));
   font-family: var(--font-family-em);
   font-style: var(--font-style-em);
 }
@@ -13893,7 +13908,7 @@ span.cm-em.cm-highlight.cm-quote,
   padding-right: 0.05em;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: var(--bt-native-highlight-color, transparent);
   background-color: #f55454;
   background-image: linear-gradient(120deg, var(--strong-em-color-1) 0%, var(--strong-em-color-2) 80%);
   font-family: var(--font-family-strong) !important;
@@ -14479,8 +14494,8 @@ body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-ren
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(strong)>em>mark {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-1));
   color: var(--bt-native-highlight-color, var(--color-highlight-1));
-  font-style: normal;
-  font-weight: var(--font-weight-highlight-1);
+  font-style: var(--bt-native-highlight-font-style, normal);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-1));
 }
 body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-rendered) :not(font):not(strong)>em>mark {
   border-radius: var(--radius-xs);
@@ -14494,7 +14509,7 @@ body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-ren
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font):not(em)>strong>mark {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-2)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-2)) !important;
-  font-weight: var(--font-weight-highlight-2);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-2));
 }
 
 body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highlight.cm-highlight.cm-strong,
@@ -14505,8 +14520,8 @@ body:not(.remove-colorful-highlight-bg) :is(.markdown-preview-view,.markdown-ren
 :is(.markdown-preview-view,.markdown-rendered).colorful-highlight :not(font)>strong>em>mark {
   background-color: var(--bt-native-highlight-background, var(--bg-color-highlight-3)) !important;
   color: var(--bt-native-highlight-color, var(--color-highlight-3)) !important;
-  font-style: normal;
-  font-weight: var(--font-weight-highlight-3);
+  font-style: var(--bt-native-highlight-font-style, normal);
+  font-weight: var(--bt-native-highlight-font-weight, var(--font-weight-highlight-3));
   background-image: initial;
   background-clip: initial;
   -webkit-background-clip: initial;
@@ -14522,25 +14537,25 @@ body:not(.remove-colorful-highlight-bg) .cm-em.cm-formatting.cm-formatting-highl
 body.all-rounded-corners-highlight .cm-s-obsidian span.cm-highlight, 
 body.all-rounded-corners-highlight :is(.markdown-preview-view,.markdown-rendered) mark {
   -webkit-box-decoration-break: clone;
-  border-radius: 5px;
-  padding: 1px 2px;
-  margin: 0 2px;
+  border-radius: var(--bt-native-highlight-radius, 5px);
+  padding: 1px var(--bt-native-highlight-padding-inline, 2px);
+  margin: 0 var(--bt-native-highlight-margin-inline, 2px);
 }
 
 body.all-rounded-corners-highlight .cm-s-obsidian .cm-formatting.cm-formatting-highlight:has(+ span.cm-highlight) {
-  border-radius: 5px 0 0 5px;
+  border-radius: var(--bt-native-highlight-radius, 5px) 0 0 var(--bt-native-highlight-radius, 5px);
   padding: 1px 0;
-  margin: 0 -5px 0 2px;
+  margin: 0 var(--bt-native-highlight-margin-inline, -5px) 0 var(--bt-native-highlight-margin-inline, 2px);
 }
 
 body.all-rounded-corners-highlight .cm-s-obsidian .cm-formatting.cm-formatting-highlight+span.cm-highlight:has(+ span.cm-highlight) {
-  padding: 1px 4px;
+  padding: 1px var(--bt-native-highlight-padding-inline, 4px);
 }
 
 body.all-rounded-corners-highlight .cm-s-obsidian span.cm-highlight+.cm-formatting.cm-formatting-highlight {
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 var(--bt-native-highlight-radius, 5px) var(--bt-native-highlight-radius, 5px) 0;
   padding: 1px 0;
-  margin: 0 2px 0 -5px;
+  margin: 0 var(--bt-native-highlight-margin-inline, 2px) 0 var(--bt-native-highlight-margin-inline, -5px);
 }
 
 body.no-rounded-corners-highlight .cm-s-obsidian span.cm-highlight, 
