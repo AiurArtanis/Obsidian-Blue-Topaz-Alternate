@@ -4,9 +4,13 @@
 
 这是 [AiurArtanis 维护的个人 fork](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate)，基于 [PKM-er / Blue Topaz](https://github.com/PKM-er/Blue-Topaz_Obsidian-css)。在原有配色与自定义选项之外，这里补充了 **Bases 资料库、聊天气泡、Notebook Navigator 导航、彩色高亮和文件夹吸顶**，也修复了一些日常使用中的显示问题。你可以通过 **Style Settings**，选择喜欢的配色、笔记布局和文件树样式。
 
-**当前正式版本 [v1.6.0](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/tag/v1.6.0)** · 支持深浅色 · [MIT](./LICENSE)
+**[下载最新正式版](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/latest)** · 支持深浅色 · [MIT](./LICENSE)
 
-本版修正手动安装时主题无法出现在选择列表的问题，继续沿用原有 Style Settings 偏好。主题 CSS 与 **v1.5.0** 一致；具体检查范围见 Release 说明。
+**v1.6.0** 修正手动安装时主题无法出现在选择列表的问题，继续沿用原有 Style Settings 偏好。主题 CSS 与 **v1.5.0** 一致；具体检查范围见 Release 说明。
+
+**跨端测试预览：[v1.6.1-preview](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/tag/v1.6.1-preview)** · [下载预览 theme.css](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/download/v1.6.1-preview/theme.css) · [同版本 manifest.json](https://raw.githubusercontent.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/v1.6.1-preview/manifest.json)
+
+本次预览修复 **Obsidian 1.15.1** 中图表字体和圆形边框的显示。已完成 Windows 本机检查，尚未完成跨端交叉测试；自动化测试请固定使用此预览版本。
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/theme-overview-dark.png">
@@ -66,17 +70,20 @@ Obsidian 1.14.4 的 **原生六色高亮**会跟随主题。高亮中的粗体�
 
 - **Obsidian 1.13.4**：提示块（Callout）继续按主题显示颜色，Notebook Navigator 的新任务进度样式也有对应配色。
 - **Obsidian 1.14.4**：补充悬浮提示、通知和 Bases 看板的样式，让它们与笔记界面更协调。
+- **Obsidian 1.15.1（v1.6.1-preview）**：新版图表继续使用主题字体，深色模式的圆形边框恢复正常，也保留笔记里自行指定的图表颜色。
 - **显示修复**：修正白板（Canvas）的标题对齐、手机顶部栏与安全区的样式、嵌入笔记时列表符号重叠的问题。
 - **设置修复**：修正部分配色选项的无效默认值，减少调整颜色时出现异常的情况。
 
-以上功能与修复均已包含在 **v1.5.0** 中，也包含在当前 **v1.6.0** 中。其中一些改动还在等待上游合并，具体状态见下方 PR 表。
+上述 1.13.4、1.14.4 及显示/设置修复已包含在 **v1.5.0** 和正式版 **v1.6.0** 中；1.15.1 图表修复从 **v1.6.1-preview** 提供。上游 PR 状态见下表。
 
 ## 安装当前版本
 
 需要 **Obsidian 1.13.0 或以上**；使用原生六色高亮等新功能，需要 Obsidian 1.14.4 或以上。
 
+参加 **Obsidian 1.15.1 跨端测试**时，第 2 步请使用固定预览版的 [theme.css](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/download/v1.6.1-preview/theme.css) 和同标签下的 [manifest.json](https://raw.githubusercontent.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/v1.6.1-preview/manifest.json)。安装目录和原有 Style Settings 偏好保持一致。
+
 1. 打开你的 Obsidian 笔记库，在 `.obsidian/themes/` 下新建文件夹 `Blue Topaz Alternate`。
-2. 下载正式版本的 [theme.css](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/download/v1.6.0/theme.css) 和同一标签下的 [manifest.json](https://raw.githubusercontent.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/v1.6.0/manifest.json)，放进这个文件夹。此版本的主题名称已与目录对齐，无需手动改名。
+2. 下载最新版的 [theme.css](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/latest/download/theme.css)，再到[最新正式版页面](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases/latest)下载 **Source code (zip)**，解压取出同一版本的 `manifest.json`。把这两个文件放进上述文件夹，无需手动改名。
 3. 在「设置 → 外观」选择 **Blue Topaz Alternate**。安装并启用社区插件 **Style Settings** 后，就可以调整配色、布局和功能开关。
 
 ```text
@@ -98,7 +105,7 @@ Notebook Navigator 等插件需要在 Obsidian 中单独安装。更新主题时
 
 ## 回馈上游的 9 条 PR
 
-这个 fork 的改动也持续提交给 Blue Topaz 上游。状态核对：**2026-10-15** · **6 条已合并，3 条开放**。
+这个 fork 的改动也持续提交给 Blue Topaz 上游。状态核对：**2026-11-14** · **6 条已合并，3 条已关闭（原 PR 未合并）**。
 
 | PR | 内容简介 | 合并情况 |
 | --- | --- | --- |
@@ -107,10 +114,12 @@ Notebook Navigator 等插件需要在 Obsidian 中单独安装。更新主题时
 | [#719](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/719) | 聊天气泡、连续渐变配色与设置开关 | 已合并 |
 | [#720](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/720) | 白板标题、手机顶部栏与嵌入列表符号的显示修复（#703 / #704 / #715） | 已合并 |
 | [#721](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/721) | Notebook Navigator 主题配色适配与总开关 | 已合并 |
-| [#728](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/728) | Obsidian 1.13.4 提示块颜色与导航任务进度适配 | 开放 |
+| [#728](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/728) | Obsidian 1.13.4 提示块颜色与导航任务进度适配 | 已关闭（未合并） |
 | [#729](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/729) | 修正配色选项中的无效默认值（#726） | 已合并 |
-| [#730](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/730) | 草稿纸 Draft Paper 深浅色配色与插件颜色适配 | 开放 |
-| [#734](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/734) | Obsidian 1.14.4 高亮、混合格式、悬浮提示、通知与看板适配 | 开放 |
+| [#730](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/730) | 草稿纸 Draft Paper 深浅色配色与插件颜色适配 | 已关闭（未合并） |
+| [#734](https://github.com/PKM-er/Blue-Topaz_Obsidian-css/pull/734) | Obsidian 1.14.4 高亮、混合格式、悬浮提示、通知与看板适配 | 已关闭（未合并） |
+
+这里记录原 PR 的状态；已关闭但未合并，不代表相同改动一定没有通过其他提交进入上游。个人主线包含的功能以上方版本说明为准。
 
 <details>
 <summary>版本与维护方式</summary>
@@ -122,6 +131,8 @@ Notebook Navigator 等插件需要在 Obsidian 中单独安装。更新主题时
 最早保留的 Bases 功能线完成快照标为 `v1.0.0`，到 `v1.5.0` 的 10 个历史标签已补齐，保留原有指向，不补历史 Release。
 
 尚未完成跨端交叉测试的版本使用 `v1.<minor>.<patch>-preview`，在 GitHub 标记为 **Pre-release**，供其他端先取得主题文件。完成交叉测试后，从经过验证的主线版本创建去掉 `-preview` 的正式标签与新 Release，不覆盖既有正式标签。
+
+后续正式 Release 都设为 **Latest**，上方下载入口会跟随最新正式版；preview 继续使用具体版本的 Release 与文件链接，便于其他端针对同一版本测试。
 
 [Release](https://github.com/AiurArtanis/Obsidian-Blue-Topaz-Alternate/releases) 只上传对应标签的 **theme.css**。GitHub 自动生成的源码归档仍由平台提供。
 
