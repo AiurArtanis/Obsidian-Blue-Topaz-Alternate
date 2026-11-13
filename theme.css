@@ -16171,6 +16171,12 @@ pre.language-note-cloze::before {
 
  
 /*======== optionnal mermaid style below ========*/
+/* Obsidian 1.15 (Pele) measures labels using --font-mermaid. Reuse the
+   existing diagram font before layout instead of restyling SVG text later. */
+.mermaid {
+  --font-mermaid: var(--mermaid-font-family, var(--font-text));
+}
+
 .markdown-source-view.mod-cm6 .cm-content > [contenteditable=false] {
   overflow: auto;
 }
@@ -16716,9 +16722,10 @@ g.stateGroup line,
   fill: var(--text-muted) !important;
 }
 
-/*emoji🙂*/
-.mermaid g>g>circle,
-.mermaid g>circle {
+/* Legacy emoji circles only: Pele owns its themed and explicit SVG strokes.
+   The zero-specificity filter preserves the original legacy cascade. */
+.mermaid g>g>circle:where(:not(.pele circle)),
+.mermaid g>circle:where(:not(.pele circle)) {
   stroke: #000000 !important;
 }
 
